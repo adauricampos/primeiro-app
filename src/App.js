@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
 
-function App() {
+import Nome from './Components/Nome'
+
+function App(){
+  const [aluno, setAluno] = useState('Dev-Ninja') 
+
+  function handleChangeName(nome){
+    setAluno(nome);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Componente App</h1><br/>
+      <h2>Olá: {aluno}</h2>
+      <button onClick={ () => handleChangeName('Adauri Campos')}>
+         Mudar Nome
+      </button>
+      
     </div>
+
   );
 }
 
